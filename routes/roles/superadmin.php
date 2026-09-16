@@ -19,16 +19,6 @@ Route::prefix('superadmin')->name('superadmin-')->group(function () {
     Route::post('manajemen-role-set-status', [SuperadminRoleController::class, 'setIsActive'])->name('manajemen-role-set-status');
     Route::post('manajemen-role-delete', [SuperadminRoleController::class, 'delete'])->name('manajemen-role-delete');
 
-    // Manajemen User
-    // Route::get('manajemen-user', [SuperadminUserController::class, 'index'])->name('manajemen-user');
-    // Route::get('manajemen-user-data', [SuperadminUserController::class, 'getData'])->name('manajemen-user-data');
-    // Route::post('manajemen-user-detail', [SuperadminUserController::class, 'getDetail'])->name('manajemen-user-detail');
-    // Route::post('manajemen-user-store', [SuperadminUserController::class, 'store'])->name('manajemen-user-store');
-    // Route::post('manajemen-user-delete', [SuperadminUserController::class, 'delete'])->name('manajemen-user-delete');
-    // Route::post('manajemen-user-reset-password', [SuperadminUserController::class, 'resetPassword'])->name('manajemen-user-reset-password');
-    // Route::post('impersonate', [SuperadminUserController::class, 'impersonate'])->name('manajemen-user-impersonate');
-    // Route::post('send-account', [SuperadminUserController::class, 'sendAccount'])->name('manajemen-user-send-account');
-
     // Manajemen Menu
     Route::get('manajemen-menu', [SuperadminMenuController::class, 'index'])->name('manajemen-menu');
     Route::get('manajemen-menu-data', [SuperadminMenuController::class, 'getData'])->name('manajemen-menu-data');

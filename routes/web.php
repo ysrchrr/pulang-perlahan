@@ -43,37 +43,13 @@ Route::get('profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('profile/peserta', [ProfileController::class, 'updatePeserta'])->name('profile.peserta.update');
 Route::post('profile/pegawai', [ProfileController::class, 'updatePegawai'])->name('profile.pegawai.update');
 Route::post('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
-Route::get('profile-petakom', [ProfilePetakomController::class, 'index'])->name('profile-petakom');
-Route::get('profile-petakom-check-nuptk', [ProfilePetakomController::class, 'checkNuptk'])->name('profile-petakom-check-nuptk');
-Route::post('profile-petakom-store', [ProfilePetakomController::class, 'storePeserta'])->name('profile-petakom-store');
 
 Route::middleware(['rbac:superadmin'])->group(function () {
     require __DIR__ . '/roles/superadmin.php';
 });
 
 Route::middleware(['auth'])->group(function () {
-    //Simdiklat
+    //User
     require __DIR__ . '/panel/dashboard.php';
     require __DIR__ . '/panel/manajemen_user.php';
-    require __DIR__ . '/panel/manajemen_jenis_kegiatan.php';
-    require __DIR__ . '/panel/manajemen_penandatangan.php';
-    require __DIR__ . '/panel/manajemen_template_sertifikat.php';
-    require __DIR__ . '/panel/manajemen_tim_kerja.php';
-    require __DIR__ . '/panel/manajemen_data_pegawai.php';
-    require __DIR__ . '/panel/manajemen_dokumen_pegawai.php';
-    require __DIR__ . '/panel/manajemen_kegiatan.php';
-    require __DIR__ . '/panel/verifikasi_penugasan.php';
-    require __DIR__ . '/panel/diklat.php';
-    require __DIR__ . '/panel/manajemen_eval_penyelenggaraan.php';
-    require __DIR__ . '/panel/manajemen_eval_narasumber.php';
-    require __DIR__ . '/panel/rekap_pegawai.php';
 });
-
-Route::middleware(['auth:petakom'])->group(function () {
-    require __DIR__ . '/panel/dashboard_petakom.php';
-    require __DIR__ . '/panel/petakom_instrumen_list.php';
-    require __DIR__ . '/panel/petakom_manajemen_master_instrumen.php';
-    require __DIR__ . '/panel/petakom_instrumen.php';
-});
-
-Route::get('auth/petakom/assign-admin', [AuthController::class, 'assignPetakomAdminByEmail'])->name('auth-petakom-assign-admin');
