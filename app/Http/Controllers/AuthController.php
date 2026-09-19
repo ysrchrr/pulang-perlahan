@@ -77,11 +77,11 @@ class AuthController extends Controller
 
         // Ambil role lengkap dengan cek is_active
         $rolesData = UserRole::where('users_id', $user->id)
+            ->whereHas('role', function ($query) {
+                $query->where('is_active', '1');
+            })
             ->with('role:id,role_name,slug_name,is_active')
             ->get()
-            ->filter(function ($item) {
-                return $item->role->is_active == 1;
-            })
             ->map(function ($item) {
                 return [
                     'id' => $item->role->id,
