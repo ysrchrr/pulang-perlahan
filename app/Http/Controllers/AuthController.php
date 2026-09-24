@@ -96,8 +96,7 @@ class AuthController extends Controller
             'roles' => $rolesData,
             'role_id' => null,
             'role_name' => null,
-            'last_login' => now(),
-            'program' => 'simdiklat'
+            'last_login' => now()
         ]);
 
         User::where('id', $user->id)->update([
@@ -317,8 +316,7 @@ class AuthController extends Controller
             'roles' => $rolesData,
             'role_id' => null,
             'role_name' => null,
-            'last_login' => now(),
-            'program' => 'simdiklat'
+            'last_login' => now()
         ]);
 
         if (count($rolesData) === 1) {
