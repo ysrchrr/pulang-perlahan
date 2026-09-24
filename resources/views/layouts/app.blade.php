@@ -5,11 +5,11 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>{{ $page_title ?? 'Dashboard' }} | SIM Kegiatan & Penugasan BGTK Jambi</title>
+    <title>{{ $page_title ?? 'Dashboard' }} | Pulang Perlahan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="SIM Kegiatan & Penugasan BGTK Jambi" name="phicosdev" />
+    <meta content="Pulang Perlahan" name="phicosdev" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ asset('assets/images/tut-wuri-handayani.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/images/pulang-perlahan-colored.png') }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @include('layouts.components.css')

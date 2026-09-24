@@ -113,7 +113,7 @@
     color: #c8cfd6;
 }
 [data-bs-theme="dark"] .select2-container--default .select2-results__option--highlighted[aria-selected] {
-    background-color: #405189;
+    background-color: var(--vz-primary);
     color: #fff;
 }
 [data-bs-theme="dark"] .select2-container--default .select2-results__option[aria-selected=true] {
@@ -125,8 +125,8 @@
     border-color: #495057;
 }
 [data-bs-theme="dark"] .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: #405189;
-    border-color: #405189;
+    background-color: var(--vz-primary);
+    border-color: var(--vz-primary);
     color: #fff;
 }
 [data-bs-theme="dark"] .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
@@ -135,4 +135,36 @@
 .form-control[readonly] {
     background-color: var(--vz-tertiary-bg);
     opacity: 1;
+}
+
+[data-theme="default"] {
+    --vz-primary: #34443d;
+    --vz-primary-rgb: 52, 68, 61;
+    --vz-primary-bg-subtle: rgba(52, 68, 61, .12);
+    --vz-primary-border-subtle: rgba(52, 68, 61, .3);
+    --vz-primary-text-emphasis: #293730;
+    --vz-warning: #e6b666;
+    --vz-warning-rgb: 230, 182, 102;
+    --vz-vertical-menu-item-hover-color: #34443d;
+    --vz-vertical-menu-item-active-color: #34443d;
+    --vz-vertical-menu-sub-item-hover-color: #34443d;
+    --vz-vertical-menu-sub-item-active-color: #34443d;
+}
+
+[data-theme="default"][data-sidebar="dark"] {
+    --vz-vertical-menu-bg: #34443d;
+    --vz-vertical-menu-border: #34443d;
+    --vz-vertical-menu-item-color: #d0d9d2;
+    --vz-vertical-menu-sub-item-color: #d0d9d2;
+    --vz-vertical-menu-title-color: #e6b666;
+    --vz-twocolumn-menu-iconview-bg: #293730;
+    --vz-vertical-menu-item-hover-color: #fff;
+    --vz-vertical-menu-item-active-color: #fff;
+    --vz-vertical-menu-sub-item-hover-color: #fff;
+    --vz-vertical-menu-sub-item-active-color: #fff;
+}
+
+[data-theme="default"][data-bs-theme="light"] body {
+    background-color: #fbfaf7;
+    background-image: none;
 }

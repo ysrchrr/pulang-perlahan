@@ -71,24 +71,6 @@
         .btn-outline-brand { color: var(--green); border-color: var(--green); }
         .btn-outline-brand:hover { color: #fff; background: var(--green); }
         .hero { min-height: 94vh; padding: 10rem 0 6rem; overflow: hidden; }
-        .hero::before, .hero::after {
-            position: absolute;
-            z-index: -1;
-            width: 28rem;
-            height: 28rem;
-            border-radius: 50%;
-            filter: blur(80px);
-            content: "";
-            opacity: .22;
-            animation: liquid-drift 10s ease-in-out infinite alternate;
-        }
-        .hero::before { top: 5rem; right: -8rem; background: var(--yellow); }
-        .hero::after {
-            bottom: -9rem;
-            left: -10rem;
-            background: var(--green);
-            animation-delay: -4s;
-        }
         .hero-copy, .section-lead {
             max-width: 690px;
             color: var(--muted);
@@ -230,10 +212,6 @@
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(-1deg); }
             50% { transform: translateY(-16px) rotate(1deg); }
-        }
-        @keyframes liquid-drift {
-            from { transform: translate3d(-2%, -3%, 0) scale(.92); }
-            to { transform: translate3d(5%, 7%, 0) scale(1.08); }
         }
         @media (prefers-reduced-motion: reduce) {
             html { scroll-behavior: auto; }

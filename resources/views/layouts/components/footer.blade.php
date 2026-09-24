@@ -4,7 +4,7 @@
             <div class="col-sm-6">
                 <script>
                     document.write(new Date().getFullYear())
-                </script> © Sistem Informasi BGTK Jambi
+                </script> © Pulang Perlahan
             </div>
         </div>
     </div>
