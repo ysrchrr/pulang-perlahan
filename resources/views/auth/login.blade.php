@@ -348,7 +348,6 @@
                     <div class="divider">atau masuk dengan</div>
                     <a class="btn-google" href="{{ route('auth-google') }}"><i class="ri-google-fill"
                             aria-hidden="true"></i> Akun Google</a>
-                    <p class="signup-link">Belum memiliki akun? <a href="{{ route('signup') }}">Daftar sekarang</a></p>
                 </div>
                 <div class="login-footer">&copy; {{ date('Y') }} Pulang Perlahan</div>
             </div>

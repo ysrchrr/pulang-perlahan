@@ -10,8 +10,7 @@ class RbacMiddleware
 {
     public function handle(Request $request, Closure $next, ...$roles)
     {
-        $isPetakom = session('program') === 'petakom' || $request->routeIs('petakom-*');
-        $user = $isPetakom ? auth('petakom')->user() : auth()->user();
+        $user = auth()->user();
 
         if (!$user) {
             return redirect()->route('login');
@@ -26,26 +25,6 @@ class RbacMiddleware
 
         if (!empty($roles) && !in_array($userRoleSlug, $roles)) {
             abort(403, 'Anda tidak memiliki akses ke role ini.');
-        }
-
-        if ($isPetakom) {
-            $petakomRouteRoles = [
-                'petakom-dashboard' => ['admin_petakom'],
-                'petakom-instrumen-list' => ['admin_petakom', 'user_petakom'],
-                'petakom-instrumen' => ['admin_petakom', 'user_petakom'],
-                'petakom-master-instrumen' => ['admin_petakom'],
-            ];
-
-            foreach ($petakomRouteRoles as $routePrefix => $allowedRoles) {
-                if (
-                    ($currentRoute === $routePrefix || str_starts_with($currentRoute, $routePrefix . '-')) &&
-                    in_array($userRoleSlug, $allowedRoles)
-                ) {
-                    return $next($request);
-                }
-            }
-
-            abort(403, 'Anda tidak memiliki akses ke halaman Petakom ini.');
         }
 
         // Ambil semua menu slug yang bisa diakses oleh role user

@@ -929,8 +929,8 @@
                     <h3 class="icon-title"><i class="ri-user-heart-line" aria-hidden="true"></i>Ruang untuk prosesmu
                         sendiri.</h3>
                     <p class="mt-3">Buat akun untuk menyimpan bacaan dan reflection dalam satu tempat.</p><a
-                        class="btn-pp btn-gold mt-3" href="{{ route('signup') }}"><i class="ri-add-circle-line"
-                            aria-hidden="true"></i>Create your space</a>
+                        class="btn-pp btn-gold mt-3" href="{{ route('login') }}"><i class="ri-add-circle-line"
+                            aria-hidden="true"></i>Masuk</a>
                     <p class="note mt-3">Membaca tetap bisa dilakukan tanpa login.</p>
                 </aside>
             </div>

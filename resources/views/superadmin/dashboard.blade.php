@@ -10,7 +10,7 @@
                         <div class="d-flex align-items-lg-center flex-lg-row flex-column">
                             <div class="flex-grow-1">
                                 <h4 class="fs-16 mb-1">{{ getSalamWaktu() }}, {{ session('user_name') }}!</h4>
-                                <p class="text-muted mb-0">Selamat Datang di SIM Kegiatan & Penugasan BGTK Jambi</p>
+                                <p class="text-muted mb-0">Selamat Datang di Pulang Perlahan</p>
                             </div>
                         </div>
                     </div>

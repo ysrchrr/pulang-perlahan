@@ -6,7 +6,6 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -65,49 +64,5 @@ class User extends Authenticatable
         return $this->roles()->where('role_name', $roleName)->exists();
     }
 
-    public function pengaduans()
-    {
-        return $this->hasMany(Pengaduan::class, 'created_by');
-    }
 
-    public function assignedPengaduans()
-    {
-        return $this->hasMany(Pengaduan::class, 'assigned_to');
-    }
-
-    public function escalatedPengaduans()
-    {
-        return $this->hasMany(Pengaduan::class, 'escalated_to');
-    }
-
-    public static function createFromPegawai(Pegawai $pegawai, $roleId = 6)
-    {
-        return DB::transaction(function () use ($pegawai, $roleId) {
-            if (empty($pegawai->email)) {
-                throw new \Exception('Email pegawai wajib diisi untuk membuat akun.');
-            }
-
-            $existingUser = self::where('email', $pegawai->email)->first();
-            if ($existingUser) {
-                throw new \Exception('Email sudah digunakan user lain.');
-            }
-
-            $user = self::create([
-                'name' => $pegawai->nama,
-                'email' => $pegawai->email,
-                'password' => bcrypt(env('DEFAULT_PASSWORD', '12345678')),
-            ]);
-
-            UserRole::create([
-                'users_id' => $user->id,
-                'roles_id' => $roleId,
-            ]);
-
-            $pegawai->update([
-                'users_id' => $user->id,
-            ]);
-
-            return $user;
-        });
-    }
 }

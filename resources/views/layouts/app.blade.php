@@ -53,18 +53,10 @@
                 <div class="container-fluid">
                     <div id="two-column-menu">
                     </div>
-                    @if (session('program') == 'simdiklat')
-                        @if (session('role_id') == 1)
-                            @include('layouts.components.sidebar-superadmin')
-                        @else
-                            @include('layouts.components.sidebar-roles')
-                        @endif
+                    @if (session('role_id') == 1)
+                        @include('layouts.components.sidebar-superadmin')
                     @else
-                        @if (session('role_id') == 1)
-                            @include('layouts.components.sidebar-petakom-superadmin')
-                        @else
-                            @include('layouts.components.sidebar-petakom-roles')
-                        @endif
+                        @include('layouts.components.sidebar-roles')
                     @endif
                 </div>
                 <!-- Sidebar -->

@@ -399,7 +399,7 @@
                         <h2>Ada yang kena banget? Simpan.</h2>
                         <p class="section-lead mt-3">Login untuk menyimpan konten yang ingin kamu baca lagi dan menulis
                             reflection pribadi untuk dirimu sendiri.</p>
-                        <a href="{{ route('signup') }}" class="btn btn-brand mt-3">Create your space</a>
+                        <a href="{{ route('login') }}" class="btn btn-brand mt-3">Masuk</a>
                         <p class="small text-muted mt-3">Membaca tetap bisa dilakukan tanpa login.</p>
                     </div>
                     <div class="col-lg-5 offset-lg-1">

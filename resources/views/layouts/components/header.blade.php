@@ -101,29 +101,10 @@
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->
-                        @if (session('program') == 'simdiklat')
-                            <a class="dropdown-item" href="{{ route('profile') }}"><i
-                                    class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
-                                    class="align-middle">Profile</span>
-                            </a>
-                        @else
-                            <a class="dropdown-item" href="{{ route('profile-petakom') }}"><i
-                                    class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span
-                                    class="align-middle">Profile</span>
-                            </a>
-                        @endif
-                        <div class="dropdown-divider"></div>
                         @if (session('roles') && count(session('roles')) > 1)
-                            @if (session('program') == 'simdiklat')
-                                <a class="dropdown-item" href="{{ route('choose-role') }}"><i
-                                        class="mdi mdi-account-convert text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle" data-key="t-logout">Switch Role</span></a>
-                            @else
-                                <a class="dropdown-item" href="{{ route('choose-role-petakom') }}"><i
-                                        class="mdi mdi-account-convert text-muted fs-16 align-middle me-1"></i> <span
-                                        class="align-middle" data-key="t-logout">Switch Role</span></a>
-                            @endif
-
+                            <a class="dropdown-item" href="{{ route('choose-role') }}"><i
+                                    class="mdi mdi-account-convert text-muted fs-16 align-middle me-1"></i> <span
+                                    class="align-middle" data-key="t-logout">Switch Role</span></a>
                         @endif
                         <a class="dropdown-item" href="{{ route('logout') }}"><i
                                 class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span
